@@ -1,0 +1,32 @@
+import matplotlib.pyplot as plt
+import numpy as np
+
+days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+sales_A = [255,251,368,370,283,361,150]
+sales_B = [177,248,241,212,132,391,319]
+
+plt.figure(figsize=(12, 8))
+
+plt.subplot(2, 1, 1)
+plt.plot(days, sales_A, marker='o', linestyle='-', color='b', label='Product A')
+plt.plot(days, sales_B, marker='s', linestyle='--', color='r', label='Product B')
+plt.title('Sales Trend for the Week')
+plt.xlabel('Days of the Week')
+plt.ylabel('Sales (in units)')
+plt.legend()
+plt.grid(True)
+
+sales_C = [156,136,101,212,94,224,121]
+sales_D = [165,231,213,229,287,201,253]
+sales_E = [164,229,68,259,92,252,110]
+
+plt.subplot(2, 1, 2)
+plt.stackplot(days, sales_C, sales_D, sales_E, labels=['Product C', 'Product D', 'Product E'])
+plt.title('Stacked Sales Data for the Week')
+plt.xlabel('Days of the Week')
+plt.ylabel('Total Sales (in units)')
+plt.legend(loc='upper left')
+plt.grid(True)
+
+plt.tight_layout()
+plt.show()

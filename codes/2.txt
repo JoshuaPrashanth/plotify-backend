@@ -1,0 +1,18 @@
+import matplotlib.pyplot as plt
+
+# Part a: Histogram
+data = [39,21,38,20,37,40,17,19,14,25,38,30,17,24,25,11,10,18]
+plt.hist(data, bins=7, color='blue', edgecolor='black')
+plt.title('Sales Distribution')
+plt.xlabel('Sales Range')
+plt.ylabel('Frequency')
+plt.grid(True)
+plt.savefig('sales_trend.png')
+plt.show()
+
+# Part b: Pie Chart
+sales = [121,197,162,105,134,186,139]
+days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+plt.pie(sales, labels=days, autopct='%1.1f%%')
+plt.title('Weekly Sales Distribution')
+plt.show()

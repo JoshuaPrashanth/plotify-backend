@@ -1,0 +1,69 @@
+import plotly.graph_objects as go
+
+months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun']
+region_A = [177,192,209,113,187,90];
+region_B = [171,160,93,169,141,187];
+region_C = [200,132,168,136,98,190];
+line_fig = go.Figure()
+
+line_fig.add_trace(go.Scatter3d(
+    x=months, y=[1]*len(months), z=region_A,
+    mode='lines+markers',
+    line=dict(color='blue', width=4),
+    marker=dict(size=6, color='red', symbol='circle'),
+    name='Region A'
+))
+
+line_fig.add_trace(go.Scatter3d(
+    x=months, y=[2]*len(months), z=region_B,
+    mode='lines+markers',
+    line=dict(color='green', width=4),
+    marker=dict(size=6, color='orange', symbol='diamond'),
+    name='Region B'
+))
+
+line_fig.add_trace(go.Scatter3d(
+    x=months, y=[3]*len(months), z=region_C,
+    mode='lines+markers',
+    line=dict(color='purple', width=4),
+    marker=dict(size=6, color='yellow', symbol='square'),
+    name='Region C'
+))
+
+line_fig.update_layout(
+    title='3D Monthly Sales Line Plot',
+    scene=dict(
+        xaxis_title='Month',
+        yaxis_title='Region Index',
+        zaxis_title='Sales'
+    ),
+    legend_title='Regions'
+)
+
+line_fig.show()
+
+scatter_fig = go.Figure()
+
+scatter_fig.add_trace(go.Scatter3d(
+    x=months * 3,
+    y=[1]*6 + [2]*6 + [3]*6,
+    z=region_A + region_B + region_C,
+    mode='markers',
+    marker=dict(
+        size=8,
+        color=['red']*6 + ['green']*6 + ['blue']*6,
+        symbol=['circle', 'diamond', 'square']*6
+    ),
+    name='All Regions'
+))
+
+scatter_fig.update_layout(
+    title='3D Scatter Plot of Monthly Sales',
+    scene=dict(
+        xaxis_title='Month',
+        yaxis_title='Region Index',
+        zaxis_title='Sales'
+    )
+)
+
+scatter_fig.show()

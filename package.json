@@ -1,0 +1,15 @@
+{
+  "name": "plotify-backend",
+  "version": "1.0.0",
+  "description": "this is a backend",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Joshua Prashanth",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0"
+  }
+}

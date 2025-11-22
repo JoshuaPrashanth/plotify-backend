@@ -1,0 +1,22 @@
+import matplotlib.pyplot as plt
+
+days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+sales = [138,136,137,142,134,114,112];
+
+plt.bar(days, sales)
+plt.title('Weekly Sales Bar Plot')
+plt.xlabel('Days')
+plt.ylabel('Sales')
+plt.grid(True)
+plt.savefig('sales_trend.png')
+plt.show()
+
+x = [29,10,13,74,51,31,71]
+y = [8,50,53,35,37,32,32]
+
+plt.scatter(x, y)
+plt.title('Scatter Plot Example')
+plt.xlabel('X-axis')
+plt.ylabel('Y-axis')
+plt.grid(True)
+plt.show()
