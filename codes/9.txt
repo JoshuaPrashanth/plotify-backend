@@ -123,3 +123,32 @@ int prec(char symb)
     }
     return p;
 }
+//output
+---- Circular Queue Menu ----
+1. Insert an Element
+2. Delete an Element
+3. Display Circular Queue
+4. Exit
+Enter your choice: 1
+Enter element to be inserted: A
+
+---- Circular Queue Menu ----
+Enter your choice: 1
+Enter element to be inserted: B
+
+---- Circular Queue Menu ----
+Enter your choice: 1
+Enter element to be inserted: C
+
+---- Circular Queue Menu ----
+Enter your choice: 1
+Enter element to be inserted: D
+
+---- Circular Queue Menu ----
+Enter your choice: 1
+Enter element to be inserted: E
+
+---- Circular Queue Menu ----
+Enter your choice: 1
+Enter element to be inserted: F
+Circular Queue Overflow
