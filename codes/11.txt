@@ -1,0 +1,136 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+typedef struct node
+{
+    int data;
+    struct node* next;
+}Ntype;
+
+Ntype* start = NULL;
+
+Ntype* node_creation()
+{
+    int user_data;
+    printf("Enter the data: ");
+    scanf("%d", &user_data);
+    
+    Ntype* new_node = malloc(sizeof(Ntype));
+    if(new_node == NULL)
+    {
+        printf("Allocation Failed");
+        return NULL;
+    }
+
+    new_node->data = user_data;
+    new_node->next = NULL;
+    
+    return new_node;
+}
+
+void first_time_insertion()
+{
+    Ntype* new_node = node_creation();
+    if (new_node == NULL)
+    {
+        printf("Node Creation Failed");
+        return;
+    }
+    start = new_node;
+}
+
+void beg_insertion()
+{
+    Ntype* new_node = node_creation();
+    if (new_node == NULL)
+    {
+        printf("Node Creation Failed");
+        return;
+    }
+    Ntype* temp = start;
+    start = new_node;
+    new_node->next = temp;
+}
+
+void end_insertion()
+{
+    Ntype* new_node = node_creation();
+    if (new_node == NULL)
+    {
+        printf("Node Creation Failed");
+        return;
+    }
+    Ntype* temp;
+    temp = start;
+    while (temp->next != NULL)
+    {
+        temp = temp->next;
+    }
+    temp->next = new_node;
+    new_node->next = NULL;
+}
+
+void pos_insertion()
+{
+    Ntype*new_node = node_creation();
+    if (new_node == NULL)
+    {
+        printf("Node Creation Failed");
+        return;
+    }
+    int data;
+    printf("Enter the element: ");
+    scanf("%d", &data);
+    Ntype* temp = start;
+    while (temp != NULL && temp->data != data)
+    {
+        temp = temp->next;
+    }
+    if (temp == NULL)
+    {
+        printf("Element not found\n");
+        return;
+    }
+    new_node->next = temp->next;
+    temp->next = new_node;
+}
+
+void display()
+{
+    Ntype* temp = start;
+    printf("start-->");
+    while(temp != NULL)
+    {
+        printf("[ %d | %p ]-->", temp->data, (void*)temp->next);
+        temp = temp->next;
+    }
+    printf("NULL\n");
+}
+
+int main()
+{
+    printf("\n---------Linked List Insertion---------\n");
+    first_time_insertion();
+    
+    while (1)
+    {
+        printf("\n---------Linked List Insertion---------\n");
+        int choice;
+        printf("1.Insertion at the Beggining\n");
+        printf("2.Insertion at Specific position\n");
+        printf("3.Insertion at the End\n");
+        printf("4. Display\n");
+        printf("5. Exit\n");
+        printf("Enter your choice: ");
+        scanf("%d", &choice);
+        printf("\n");
+        if(choice == 1) beg_insertion();
+        else if(choice == 2) pos_insertion();
+        else if(choice == 3) end_insertion();
+        else if(choice == 4) display();
+        else if(choice == 5) return 0;
+        else printf("Invalid input\n")f;
+    }
+    return 0;
+    
+}
