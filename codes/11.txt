@@ -129,8 +129,8 @@ int main()
         else if(choice == 3) end_insertion();
         else if(choice == 4) display();
         else if(choice == 5) return 0;
-        else printf("Invalid input\n")f;
+        else printf("Invalid input\n");
     }
     return 0;
-    
+
 }
